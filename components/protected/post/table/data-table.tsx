@@ -43,6 +43,9 @@ export function DataTable<TData, TValue>({
   );
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
+  // TanStack Table manages its own state internally; the React Compiler lint rule
+  // flags its return value as un-memoizable, but the hook is safe to use as documented.
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
     columns,

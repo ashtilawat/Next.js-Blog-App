@@ -280,6 +280,8 @@ const CommandList = ({
   }, [items, selectedIndex, setSelectedIndex, selectItem]);
 
   useEffect(() => {
+    // Reset the highlighted command whenever the filtered list changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedIndex(0);
   }, [items]);
 
